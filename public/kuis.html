@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat SMA - Persiapan Misi</title>
+  <meta name="description" content="Persiapan misi evaluasi prasyarat interaktif di Mat SMA Expo City.">
+  <link rel="stylesheet" href="assets/css/kuis.css">
+</head>
+<body class="kuis-background">
+
+  <!-- Header Persiapan Misi -->
+  <header class="kuis-header">
+    <a href="menu.html" class="brand-link">
+      <span class="brand-mat">Mat</span><span class="brand-sma">SMA</span>
+    </a>
+
+    <div class="quiz-progress-indicator">
+      Soal <span id="quizQuestionNumber">1</span> dari <span id="quizTotalQuestions">8</span>
+    </div>
+  </header>
+
+  <!-- Tombol Kuning Bulat Pojok Kanan Atas Tepat Bawah Header (Atas: Home, Bawah: Petunjuk) -->
+  <div class="page-top-actions">
+    <a href="menu.html" class="btn-yellow-round-action" title="Kembali ke Beranda" aria-label="Kembali ke Beranda">
+      🏠
+    </a>
+    <button type="button" class="btn-yellow-round-action" id="btnOpenPetunjukKuis" title="Petunjuk Persiapan Misi" aria-label="Petunjuk Persiapan Misi">
+      ?
+    </button>
+  </div>
+
+  <!-- Kontainer Persiapan Misi -->
+  <main class="kuis-container">
+    <div class="kuis-title-wrap">
+      <h1 class="kuis-hero-title">PERSIAPAN MISI</h1>
+      <div class="kuis-hero-sub-box">
+        <span class="kuis-hero-sub">SEKTOR 01 // EVALUASI PRASYARAT</span>
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-meta-row">
+        <span class="quiz-tag">EVALUASI PRASYARAT</span>
+      </div>
+
+      <!-- Teks Pertanyaan -->
+      <h2 class="quiz-question-text" id="quizQuestionText">
+        Memuat pertanyaan kuis...
+      </h2>
+
+      <!-- Pilihan Jawaban -->
+      <div class="quiz-options" id="quizOptionsContainer">
+        <!-- Dirender secara dinamis oleh QuizController -->
+      </div>
+
+      <!-- Tombol Submit / Verifikasi Jawaban di Bawah Kartu Persiapan Misi -->
+      <div class="quiz-submit-action" id="quizSubmitBar">
+        <button type="button" class="btn-quiz-submit disabled" id="btnSubmitQuiz" disabled>
+          Verifikasi Jawaban
+        </button>
+      </div>
+
+      <!-- Area Tampilan Feedback Maskot Robot (Setengah di Luar, Setengah di Dalam Kotak Notif) -->
+      <div id="quizFeedbackArea" style="display: none; margin-top: 1.5rem;"></div>
+
+      <!-- Area Tampilan Hasil Akhir -->
+      <div id="quizResultArea"></div>
+    </div>
+
+    <!-- Tombol Panah Bulat Lucu Melayang (Tengah Layar Kiri & Kanan, Fixed Tidak Ikut Scroll, Tanpa Tulisan) -->
+    <button type="button" class="floating-quiz-nav prev-side" id="btnQuizPrev" aria-label="Soal Sebelumnya" title="Kembali ke Soal Sebelumnya" style="display: none;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+    </button>
+    <button type="button" class="floating-quiz-nav next-side" id="btnQuizNext" aria-label="Soal Berikutnya" title="Lanjut ke Soal Berikutnya">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 18 6-6-6-6"/>
+      </svg>
+    </button>
+  </main>
+
+  <!-- Modal Petunjuk Persiapan Misi -->
+  <div id="modalPetunjukKuis" class="modal-petunjuk-backdrop" style="display: none;">
+    <div class="modal-petunjuk-card">
+      <div class="modal-petunjuk-header">
+        <div class="modal-petunjuk-kicker">PANDUAN &amp; ATURAN EVALUASI</div>
+        <h2 class="modal-petunjuk-title">Petunjuk Persiapan Misi</h2>
+        <button type="button" class="modal-petunjuk-close" id="btnClosePetunjukKuis" aria-label="Tutup Petunjuk">✕</button>
+      </div>
+      <div class="modal-petunjuk-body">
+        <div style="font-size: 1.05rem; line-height: 1.8; color: #1E293B; font-weight: 600;">
+          <p style="font-weight: 800; font-size: 1.1rem; color: #0A2540; margin-bottom: 0.75rem;">Petunjuk Pengerjaan:</p>
+          <ol style="padding-left: 1.4rem; display: flex; flex-direction: column; gap: 0.65rem;">
+            <li>Bacalah setiap soal dengan teliti sebelum menentukan jawaban.</li>
+            <li>Gunakan sifat eksponen yang sesuai untuk menyelesaikan setiap soal.</li>
+            <li>Latihan ini merupakan pemanasan untuk mempersiapkan menghadapi Misi Utama.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="modal-petunjuk-footer">
+        <button type="button" class="btn-yellow-modal" id="btnUnderstoodPetunjukKuis">
+          Saya Mengerti, Mulai Kuis! →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: MVC Architecture -->
+  <script src="config/env.js"></script>
+  <script src="models/SupabaseService.js"></script>
+  <script src="models/UserModel.js"></script>
+  <script src="models/QuizModel.js"></script>
+  <script src="controllers/QuizController.js"></script>
+</body>
+</html>

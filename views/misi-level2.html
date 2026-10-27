@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat SMA - District 2: Expo Central Control Lab</title>
+  <meta name="description" content="Tantangan escape room District 2: Expo Central Control Lab di Mat SMA.">
+  <link rel="stylesheet" href="assets/css/misi.css">
+  <script>window.CURRENT_LEVEL = 2;</script>
+</head>
+<body class="misi-level2-bg">
+
+  <!-- Header Misi District 2 -->
+  <header class="misi-header">
+    <a href="menu.html" class="brand-link">
+      <span class="brand-mat">Mat</span><span class="brand-sma">SMA</span>
+    </a>
+
+    <div class="mission-status-pill" id="levelStatusPill">
+      ● DISTRICT 2 // CONTROL LAB
+    </div>
+  </header>
+
+  <!-- Tombol Kuning Bulat Pojok Kanan Atas Tepat Bawah Header -->
+  <div class="page-top-actions">
+    <a href="misi.html" class="btn-yellow-round-action" title="Kembali ke Misi Utama" aria-label="Kembali ke Misi Utama">
+      🏠
+    </a>
+    <button type="button" class="btn-yellow-round-action" id="btnOpenPetunjukLevel" title="Petunjuk District 2" aria-label="Petunjuk District 2">
+      ?
+    </button>
+  </div>
+
+  <!-- Kontainer Konten District 2 -->
+  <main class="misi-container">
+    <div class="misi-intro">
+      <div class="misi-title-wrap">
+        <h1 class="misi-title" id="districtMainHeading">District 2: Expo Central Control Lab</h1>
+        <div class="misi-hero-sub-box">
+          <span class="misi-hero-sub" id="districtSubHeading">DISTRICT 02 // EXPO CENTRAL CONTROL LAB</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAMPILAN 1: PENGERJAAN MISI (MODE SOAL INTERAKTIF SESUAI KONSEP) -->
+    <div id="challengeView">
+      <div class="mission-single-deck">
+        <div class="mission-panel" id="stageContentPanel">
+          <!-- Dirender dinamis oleh MissionLevelController sesuai Halaman 1 sampai 9 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAMPILAN 2: FORMAT 1 HALAMAN SCROLL KE BAWAH (REKAMAN JAWABAN SISWA) -->
+    <div id="reviewView" style="display: none;">
+      <div class="level-review-card">
+        <div class="level-review-badge">● REKAMAN TERSIMPAN // SELESAI ✓</div>
+
+        <div id="reviewStagesList" style="display: flex; flex-direction: column; gap: 1.75rem; margin-top: 1.25rem;">
+          <!-- Dirender dinamis oleh MissionLevelController untuk 10 butir evaluasi -->
+        </div>
+
+        <div id="reviewClosingArea" style="margin-top: 2rem;"></div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; align-items: center; justify-content: center;">
+          <a href="misi.html" class="btn-yellow-glow" style="text-decoration: none;">
+            ← Kembali
+          </a>
+          <button type="button" id="btnAdminViewQuestions" class="btn-yellow-glow" style="display: none; background: #047857; border-color: #34D399;">
+            Buka Mode Soal
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tombol Panah Bulat Lucu Melayang (Kiri & Kanan Tengah Layar, Fixed Tidak Ikut Scroll, Tanpa Tulisan) -->
+    <button type="button" class="floating-quiz-nav prev-side" id="btnPrevStage" aria-label="Halaman Sebelumnya" title="Halaman Sebelumnya" style="display: none;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+    </button>
+
+    <button type="button" class="floating-quiz-nav next-side disabled" id="btnNextStage" aria-label="Halaman Berikutnya" title="Halaman Berikutnya" style="display: none;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 18 6-6-6-6"/>
+      </svg>
+    </button>
+  </main>
+
+  <!-- Modal Petunjuk District 2 -->
+  <div id="modalPetunjukLevel" class="modal-petunjuk-backdrop" style="display: none;">
+    <div class="modal-petunjuk-card">
+      <div class="modal-petunjuk-header">
+        <div class="modal-petunjuk-kicker">PANDUAN DISTRICT 2</div>
+        <h2 class="modal-petunjuk-title">Petunjuk Expo Central Control Lab</h2>
+        <button type="button" class="modal-petunjuk-close" id="btnClosePetunjukLevel" aria-label="Tutup Petunjuk">✕</button>
+      </div>
+      <div class="modal-petunjuk-body">
+        <div class="guide-item">
+          <div class="guide-num">01</div>
+          <div class="guide-text">
+            <strong>Analisis Skenario:</strong> Pahami konsep logika MVC, isolasi data RLS, dan matriks stabilitas pada setiap sub-sektor halaman.
+          </div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">02</div>
+          <div class="guide-text">
+            <strong>Verifikasi Jawaban:</strong> Pilih salah satu kunci sandi dan klik "Verifikasi Jawaban 🔓". Panah kanan akan aktif setelah jawaban diverifikasi benar.
+          </div>
+        </div>
+      </div>
+      <div class="modal-petunjuk-footer">
+        <button type="button" class="btn-yellow-modal" id="btnUnderstoodPetunjukLevel">
+          Saya Mengerti →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config/env.js"></script>
+  <script src="models/SupabaseService.js"></script>
+  <script src="models/UserModel.js"></script>
+  <script src="models/MissionModel.js"></script>
+  <script src="controllers/MissionLevelController.js"></script>
+</body>
+</html>

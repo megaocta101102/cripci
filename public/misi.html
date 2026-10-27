@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat SMA - Misi Utama</title>
+  <meta name="description" content="Tantangan escape room 3 level interaktif di Mat SMA.">
+  <link rel="stylesheet" href="assets/css/misi.css">
+</head>
+<body class="misi-background">
+
+  <!-- Header Misi -->
+  <header class="misi-header">
+    <a href="menu.html" class="brand-link">
+      <span class="brand-mat">Mat</span><span class="brand-sma">SMA</span>
+    </a>
+
+    <div class="mission-status-pill" id="missionStatusPill">
+      ● TANTANGAN ESCAPE ROOM
+    </div>
+  </header>
+
+  <!-- Tombol Kuning Bulat Pojok Kanan Atas Tepat Bawah Header -->
+  <div class="page-top-actions">
+    <a href="menu.html" class="btn-yellow-round-action" title="Kembali ke Beranda" aria-label="Kembali ke Beranda">
+      🏠
+    </a>
+    <button type="button" class="btn-yellow-round-action" id="btnOpenPetunjukMisi" title="Petunjuk Misi Utama" aria-label="Petunjuk Misi Utama">
+      ?
+    </button>
+  </div>
+
+  <!-- Kontainer Misi Utama -->
+  <main class="misi-container">
+    <!-- Judul & Sektor -->
+    <div class="misi-intro">
+      <div class="misi-title-wrap">
+        <h1 class="misi-title">Misi Utama</h1>
+        <div class="misi-hero-sub-box">
+          <span class="misi-hero-sub">SEKTOR 03 // RUANG INTI KONTROL PUSAT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pilihan Per District -->
+    <div class="level-selection-stack" id="levelSelectionStack">
+      <!-- 1. District 1 -->
+      <a href="misi-level1.html" class="level-choice-plate" id="cardLvl1">
+        <div class="lvl-plate-num">01</div>
+        <div class="lvl-plate-content">
+          <div class="lvl-plate-kicker">DISTRICT 1 // ECO DOME</div>
+          <h2 class="lvl-plate-title">District 1: Eco Dome</h2>
+          <p class="lvl-plate-desc">Sistem pemantauan organisme Hydra Cells dan pemecahan masalah Eco Dome.</p>
+        </div>
+        <div class="lvl-plate-action">
+          <span class="lvl-status-tag" id="statusTagLvl1">● Mulai</span>
+          <div class="lvl-arrow-btn">→</div>
+        </div>
+      </a>
+
+      <!-- 2. District 2 -->
+      <a href="misi-level2.html" class="level-choice-plate" id="cardLvl2">
+        <div class="lvl-plate-num">02</div>
+        <div class="lvl-plate-content">
+          <div class="lvl-plate-kicker">DISTRICT 2 // CONTROL LAB</div>
+          <h2 class="lvl-plate-title">District 2: Expo Central Control Lab</h2>
+          <p class="lvl-plate-desc">Pusat kendali komando, dekripsi protokol transmisi sentral, dan laboratorium isolasi data kota.</p>
+        </div>
+        <div class="lvl-plate-action">
+          <span class="lvl-status-tag" id="statusTagLvl2">🔒 Terkunci</span>
+          <div class="lvl-arrow-btn">→</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Hasil Reward & Barcode (Muncul di Bawah Pilihan Level Jika Semua Misi Tuntas) -->
+    <section id="rewardSection" class="misi-reward-section" style="display: none;">
+      <div class="final-intro">
+        <h2 class="final-title">Pencapaian Pembelajaran</h2>
+        <div class="final-desc-box">
+          <p class="final-desc">Selamat kepada para penjelajah kota teknologi atas dedikasi dan ketuntasan misi.</p>
+        </div>
+      </div>
+
+      <div class="reward-card">
+        <!-- Identitas Siswa -->
+        <div class="student-meta-badge">
+          <span class="meta-label">PENJELAJAH AKTIF:</span>
+          <span id="finalUserName" class="meta-username">Siswa Digital</span>
+        </div>
+
+        <!-- Tampilan Skor & Lencana Siswa -->
+        <div class="reward-grid">
+          <!-- Kartu Lencana -->
+          <div class="reward-metric-card badge-metric">
+            <div class="metric-icon-wrap">
+              <svg class="metric-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <div class="metric-header">LENCANA KEHORMATAN</div>
+            <div id="finalBadgeName" class="metric-badge-name">Arsitek Jaringan Siber</div>
+            <div class="metric-badge-tag">Terverifikasi Sistem Kota ●</div>
+          </div>
+
+          <!-- Kartu Skor Siswa -->
+          <div class="reward-metric-card score-metric">
+            <div class="metric-icon-wrap">
+              <svg class="metric-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+              </svg>
+            </div>
+            <div class="metric-header">SKOR SISWA</div>
+            <div class="score-display">
+              <span id="finalScoreValue" class="score-number">100</span>
+              <span class="score-unit">/ 100</span>
+            </div>
+            <div class="metric-badge-tag">Akumulasi: <strong id="finalUserXp" style="color: #D97706;">300 XP</strong></div>
+          </div>
+        </div>
+
+        <!-- Area Unggah Google Drive & Barcode -->
+        <div class="upload-section">
+          <p class="upload-instruction">
+            Silakan unggah langkah penyelesaian dan hasil akhir misi kalian ke dalam google drive berikut!
+          </p>
+
+          <div class="barcode-wrapper">
+            <div class="barcode-scan-kicker">scan here</div>
+            
+            <div class="barcode-frame">
+              <!-- Stylized QR Code SVG Berwarna Kuning, Oren, Oren Kecoklatan & Putih -->
+              <svg class="qr-svg" viewBox="0 0 160 160" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background: Oren Kecoklatan Gelap -->
+                <rect width="160" height="160" fill="#2E1305" rx="10" />
+                
+                <!-- Top-Left Finder -->
+                <rect x="14" y="14" width="36" height="36" fill="#F59E0B" rx="4" />
+                <rect x="20" y="20" width="24" height="24" fill="#2E1305" rx="2" />
+                <rect x="26" y="26" width="12" height="12" fill="#FBBF24" rx="2" />
+                
+                <!-- Top-Right Finder -->
+                <rect x="110" y="14" width="36" height="36" fill="#F59E0B" rx="4" />
+                <rect x="116" y="20" width="24" height="24" fill="#2E1305" rx="2" />
+                <rect x="122" y="26" width="12" height="12" fill="#FBBF24" rx="2" />
+                
+                <!-- Bottom-Left Finder -->
+                <rect x="14" y="110" width="36" height="36" fill="#F59E0B" rx="4" />
+                <rect x="20" y="116" width="24" height="24" fill="#2E1305" rx="2" />
+                <rect x="26" y="122" width="12" height="12" fill="#FBBF24" rx="2" />
+                
+                <!-- Timing Lines: Kuning & Putih -->
+                <g fill="#FBBF24">
+                  <rect x="56" y="26" width="6" height="6" rx="1"/>
+                  <rect x="68" y="26" width="6" height="6" rx="1" fill="#FFFFFF"/>
+                  <rect x="80" y="26" width="6" height="6" rx="1"/>
+                  <rect x="92" y="26" width="6" height="6" rx="1" fill="#FFFFFF"/>
+                  <rect x="26" y="56" width="6" height="6" rx="1"/>
+                  <rect x="26" y="68" width="6" height="6" rx="1" fill="#FFFFFF"/>
+                  <rect x="26" y="80" width="6" height="6" rx="1"/>
+                  <rect x="26" y="92" width="6" height="6" rx="1" fill="#FFFFFF"/>
+                </g>
+
+                <!-- Data Matrix Modules: Nuansa Kuning, Oren, Oren Kecoklatan, Putih -->
+                <g>
+                  <rect x="60" y="60" width="8" height="8" rx="1.5" fill="#FBBF24" />
+                  <rect x="74" y="60" width="8" height="8" rx="1.5" fill="#EA580C" />
+                  <rect x="88" y="60" width="8" height="8" rx="1.5" fill="#FFFFFF" />
+                  <rect x="60" y="74" width="8" height="8" rx="1.5" fill="#F59E0B" />
+                  <rect x="74" y="74" width="12" height="12" rx="2" fill="#B45309" />
+                  <rect x="92" y="74" width="8" height="8" rx="1.5" fill="#FBBF24" />
+                  <rect x="60" y="88" width="8" height="8" rx="1.5" fill="#FFFFFF" />
+                  <rect x="88" y="88" width="8" height="8" rx="1.5" fill="#EA580C" />
+                  
+                  <rect x="110" y="56" width="8" height="8" rx="1.5" fill="#F59E0B" />
+                  <rect x="124" y="56" width="8" height="8" rx="1.5" fill="#B45309" />
+                  <rect x="138" y="56" width="8" height="8" rx="1.5" fill="#FFFFFF" />
+                  <rect x="110" y="70" width="8" height="8" rx="1.5" fill="#FBBF24" />
+                  <rect x="124" y="70" width="8" height="8" rx="1.5" fill="#EA580C" />
+                  <rect x="138" y="70" width="8" height="8" rx="1.5" fill="#FFFFFF" />
+                  
+                  <rect x="56" y="110" width="8" height="8" rx="1.5" fill="#EA580C" />
+                  <rect x="70" y="110" width="8" height="8" rx="1.5" fill="#FFFFFF" />
+                  <rect x="84" y="110" width="8" height="8" rx="1.5" fill="#FBBF24" />
+                  <rect x="98" y="110" width="8" height="8" rx="1.5" fill="#B45309" />
+                  <rect x="56" y="124" width="8" height="8" rx="1.5" fill="#F59E0B" />
+                  <rect x="70" y="124" width="8" height="8" rx="1.5" fill="#EA580C" />
+                  <rect x="84" y="124" width="8" height="8" rx="1.5" fill="#FFFFFF" />
+                  <rect x="98" y="124" width="8" height="8" rx="1.5" fill="#FBBF24" />
+                  <rect x="112" y="124" width="8" height="8" rx="1.5" fill="#B45309" />
+                  <rect x="126" y="124" width="8" height="8" rx="1.5" fill="#F59E0B" />
+                  <rect x="140" y="124" width="8" height="8" rx="1.5" fill="#FFFFFF" />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Petunjuk Misi Utama -->
+  <div id="modalPetunjukMisi" class="modal-petunjuk-backdrop" style="display: none;">
+    <div class="modal-petunjuk-card">
+      <div class="modal-petunjuk-header">
+        <div class="modal-petunjuk-kicker">PANDUAN &amp; ATURAN ESCAPE ROOM</div>
+        <h2 class="modal-petunjuk-title">Petunjuk Misi Utama</h2>
+        <button type="button" class="modal-petunjuk-close" id="btnClosePetunjukMisi" aria-label="Tutup Petunjuk">✕</button>
+      </div>
+      <div class="modal-petunjuk-body">
+        <div class="guide-item">
+          <div class="guide-num">01</div>
+          <div class="guide-text">
+            <strong>Tiga Level Tantangan:</strong> Selesaikan tantangan Level 1 untuk membuka Level 2, dan tuntaskan Level 2 untuk membuka Level 3.
+          </div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">02</div>
+          <div class="guide-text">
+            <strong>Akses Per Level:</strong> Klik kartu level untuk masuk ke halaman tantangan. Setelah level selesai, tampilannya akan otomatis menjadi rekaman riwayat jawaban.
+          </div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">03</div>
+          <div class="guide-text">
+            <strong>Reward &amp; Barcode:</strong> Hasil akhir, skor, lencana kehormatan, dan barcode upload Google Drive akan terbuka di halaman ini setelah semua level tuntas.
+          </div>
+        </div>
+      </div>
+      <div class="modal-petunjuk-footer">
+        <button type="button" class="btn-yellow-modal" id="btnUnderstoodPetunjukMisi">
+          Saya Mengerti →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config/env.js"></script>
+  <script src="models/SupabaseService.js"></script>
+  <script src="models/UserModel.js"></script>
+  <script src="models/MissionModel.js"></script>
+  <script src="controllers/MissionController.js"></script>
+</body>
+</html>

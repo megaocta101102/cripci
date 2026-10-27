@@ -1,0 +1,453 @@
+/* ==============================================================================
+   MAT SMA / EXPO CITY - COVER / BERANDA UTAMA (cover.css)
+   Tema: Expo City - Kota Teknologi Futuristik Terang (Light Ice-Blue & White)
+   Tipografi: TT Octosquares Condensed (dengan webfont fallback Chakra Petch & Rajdhani)
+   Efek: Background Fixed Parallax (Murni gambar kota panorama asli)
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --color-primary: #F59E0B;
+  --color-primary-light: #FBBF24;
+  --color-primary-dark: #D97706;
+  --color-accent: #0284C7;
+  --color-yellow: #F59E0B;
+  --color-yellow-light: #FBBF24;
+  
+  /* Kotak / Card: Tema Terang Bersih */
+  --color-surface-light: rgba(240, 248, 255, 0.94);
+  --color-surface-card: rgba(255, 255, 255, 0.92);
+  --color-surface-border: rgba(186, 230, 253, 0.9);
+  
+  /* Teks Kontras Tinggi */
+  --color-text-title: #0A2540;
+  --color-text-body: #1E293B;
+  --color-text-muted: #334155;
+  --color-text-white: #FFFFFF;
+
+  /* Font TT Octosquares Condensed */
+  --font-main: 'TT Octosquares Condensed', 'TT Octosquares', 'Chakra Petch', 'Rajdhani', sans-serif;
+  --font-display: 'TT Octosquares Condensed', 'TT Octosquares', 'Orbitron', 'Chakra Petch', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--font-main);
+  background-color: #E0F2FE;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Background Fixed Parallax: Murni Gambar Asli Terang */
+.cover-background {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../images/cover.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigasi Header Top Bar */
+.top-header {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(240, 248, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1.5px solid rgba(186, 230, 253, 0.85);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 14px rgba(14, 116, 144, 0.08);
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.brand-mat {
+  color: #0284C7;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.brand-sma {
+  color: #F59E0B;
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.nav-item {
+  color: #1E293B;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: #D97706;
+  border-bottom: 2px solid #D97706;
+  padding-bottom: 2px;
+}
+
+/* Tombol Kuning di Header: Bercahaya saat hover */
+.header-action .btn-primary {
+  padding: 0.45rem 1.15rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: var(--font-main);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #FFFFFF;
+  border: 1.5px solid #FDE68A;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+  transition: all 0.2s ease;
+}
+
+.header-action .btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #FBBF24, #F59E0B);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.8), 0 0 40px rgba(251, 191, 36, 0.5);
+}
+
+/* Kontainer Utama */
+.main-container {
+  flex: 1;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Hero Section */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #0369A1;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(186, 230, 253, 0.9);
+  padding: 0.35rem 0.95rem;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.meta-divider {
+  color: #94A3B8;
+}
+
+/* Judul Expo City Kuning Bergaris Putih */
+.hero-title-expo {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #F59E0B;
+  -webkit-text-stroke: 2px #FFFFFF;
+  text-shadow: 0 4px 16px rgba(217, 119, 6, 0.45), 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.35rem;
+}
+
+/* Tulisan Kota Teknologi Interaktif: Font Putih dengan Efek Neon Tipis Gelap agar Terbaca Jelas */
+.hero-subtitle-city {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 800;
+  color: #FFFFFF !important;
+  letter-spacing: 0.05em;
+  text-shadow: 
+    0 0 3px rgba(10, 37, 64, 0.95),
+    0 0 8px rgba(10, 37, 64, 0.85),
+    0 0 16px rgba(15, 23, 42, 0.7),
+    0 2px 4px rgba(0, 0, 0, 0.55);
+  margin-bottom: 1.5rem;
+}
+
+/* Kotak Transparan Khusus Teks "Selamat Datang ..." */
+.hero-desc-box {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  max-width: 580px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(14, 116, 144, 0.08);
+}
+
+.hero-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #0F2942;
+  font-weight: 600;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Tombol Utama: Warna Kuning, Hover Tetap Kuning tapi Bercahaya */
+.btn-large {
+  padding: 0.85rem 2.25rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  font-family: var(--font-main);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #FFFFFF;
+  border: 1.5px solid #FDE68A;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.35);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-large:hover, .btn-large:active {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 28px rgba(245, 158, 11, 0.85), 0 0 50px rgba(251, 191, 36, 0.55);
+}
+
+/* Card Robot Maskot di Sisi Kanan */
+.robot-mascot-card {
+  background: rgba(240, 248, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(186, 230, 253, 0.9);
+  border-radius: 22px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(14, 116, 144, 0.12), 0 0 25px rgba(255, 255, 255, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+.robot-mascot-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #F59E0B, #38BDF8, transparent);
+}
+
+.mascot-image-wrapper {
+  width: 170px;
+  height: 170px;
+  border-radius: 20px;
+  border: 3px solid #FFFFFF;
+  background: #E0F2FE;
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.mascot-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mascot-image-wrapper:hover img {
+  transform: scale(1.06);
+}
+
+.mascot-speech-bubble {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(186, 230, 253, 0.9);
+  border-radius: 14px;
+  padding: 0.95rem 1.2rem;
+  color: #0F2942;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.25rem;
+}
+
+.mascot-speech-bubble strong {
+  color: #D97706;
+}
+
+.mascot-badges-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mascot-badge-item {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #78350F;
+  background: #FEF3C7;
+  border: 1px solid #FCD34D;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+}
+
+/* Quick Page Navigation Bar */
+.page-switch-bar {
+  margin-top: 3.5rem;
+  padding: 1.2rem 1.75rem;
+  background: rgba(240, 248, 255, 0.9);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(186, 230, 253, 0.85);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 8px 24px rgba(14, 116, 144, 0.08);
+}
+
+.page-switch-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0F2942;
+}
+
+.page-switch-nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.page-chip {
+  padding: 0.5rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  font-family: var(--font-main);
+  letter-spacing: 0.03em;
+  color: #78350F;
+  background: #FFFBEB;
+  border: 1.5px solid #FCD34D;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.page-chip:hover, .page-chip.active {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  border-color: #FDE68A;
+  color: #FFFFFF;
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.7);
+  transform: translateY(-1px);
+}
+
+/* Footer Sederhana */
+.site-footer {
+  padding: 1.5rem 2.5rem;
+  border-top: 1.5px solid rgba(186, 230, 253, 0.8);
+  background: rgba(240, 248, 255, 0.92);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.825rem;
+  color: #475569;
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+  .top-header {
+    padding: 0 1.25rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .main-container {
+    padding: 2rem 1.25rem;
+  }
+  .robot-mascot-card {
+    max-width: 380px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}

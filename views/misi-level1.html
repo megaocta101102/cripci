@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat SMA - District 1: Eco Dome</title>
+  <meta name="description" content="Tantangan investigasi matematika District 1: Eco Dome di Mat SMA.">
+  <link rel="stylesheet" href="assets/css/misi.css">
+  <script>window.CURRENT_LEVEL = 1;</script>
+</head>
+<body class="misi-level1-bg">
+
+  <!-- Header Misi District 1 -->
+  <header class="misi-header">
+    <a href="menu.html" class="brand-link">
+      <span class="brand-mat">Mat</span><span class="brand-sma">SMA</span>
+    </a>
+
+    <div class="mission-status-pill" id="levelStatusPill">
+      ● DISTRICT 1 // ECO DOME
+    </div>
+  </header>
+
+  <!-- Tombol Kuning Bulat Pojok Kanan Atas Tepat Bawah Header -->
+  <div class="page-top-actions">
+    <a href="misi.html" class="btn-yellow-round-action" title="Kembali ke Misi Utama" aria-label="Kembali ke Misi Utama">
+      🏠
+    </a>
+    <button type="button" class="btn-yellow-round-action" id="btnOpenPetunjukLevel" title="Petunjuk Eco Dome" aria-label="Petunjuk Eco Dome">
+      ?
+    </button>
+  </div>
+
+  <!-- Kontainer Konten District 1 -->
+  <main class="misi-container">
+    <div class="misi-intro">
+      <div class="misi-title-wrap">
+        <h1 class="misi-title" id="districtMainHeading">District 1: Eco Dome</h1>
+        <div class="misi-hero-sub-box">
+          <span class="misi-hero-sub" id="districtSubHeading">DISTRICT 01 // ECO DOME</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAMPILAN 1: PENGERJAAN MISI (MODE SOAL INTERAKTIF SESUAI KONSEP) -->
+    <div id="challengeView">
+      <div class="mission-single-deck">
+        <div class="mission-panel" id="stageContentPanel">
+          <!-- Dirender dinamis oleh MissionLevelController sesuai Halaman 1 sampai 7 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAMPILAN 2: FORMAT 1 HALAMAN SCROLL KE BAWAH (REKAMAN JAWABAN SISWA) -->
+    <div id="reviewView" style="display: none;">
+      <div class="level-review-card">
+        <div class="level-review-badge">● REKAMAN TERSIMPAN // SELESAI ✓</div>
+
+        <div id="reviewStagesList" style="display: flex; flex-direction: column; gap: 1.75rem; margin-top: 1.25rem;">
+          <!-- Dirender dinamis oleh MissionLevelController untuk 7 nomor evaluasi -->
+        </div>
+
+        <div id="reviewClosingArea" style="margin-top: 2rem;"></div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; align-items: center; justify-content: center;">
+          <a href="misi.html" class="btn-yellow-glow" style="text-decoration: none;">
+            ← Kembali
+          </a>
+          <a href="misi-level2.html" id="btnNextDistrictFromReview" class="btn-yellow-glow" style="text-decoration: none; background: #0284C7; border-color: #38BDF8;">
+            Pindah District
+          </a>
+          <button type="button" id="btnAdminViewQuestions" class="btn-yellow-glow" style="display: none; background: #047857; border-color: #34D399;">
+            Buka Mode Soal
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tombol Panah Bulat Lucu Melayang (Kiri & Kanan Tengah Layar, Fixed Tidak Ikut Scroll, Tanpa Tulisan) -->
+    <button type="button" class="floating-quiz-nav prev-side" id="btnPrevStage" aria-label="Halaman Sebelumnya" title="Halaman Sebelumnya" style="display: none;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+    </button>
+
+    <button type="button" class="floating-quiz-nav next-side disabled" id="btnNextStage" aria-label="Halaman Berikutnya" title="Halaman Berikutnya" style="display: none;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 18 6-6-6-6"/>
+      </svg>
+    </button>
+  </main>
+
+  <!-- Modal Petunjuk District 1 -->
+  <div id="modalPetunjukLevel" class="modal-petunjuk-backdrop" style="display: none;">
+    <div class="modal-petunjuk-card">
+      <div class="modal-petunjuk-header">
+        <div class="modal-petunjuk-kicker">PANDUAN DISTRICT 1</div>
+        <h2 class="modal-petunjuk-title">Petunjuk Eco Dome</h2>
+        <button type="button" class="modal-petunjuk-close" id="btnClosePetunjukLevel" aria-label="Tutup Petunjuk">✕</button>
+      </div>
+      <div class="modal-petunjuk-body">
+        <div class="guide-item">
+          <div class="guide-num">01</div>
+          <div class="guide-text">
+            <strong>Analisis Masalah:</strong> Ikuti instruksi robot dan amati pertambahan organisme Hydra Cells setiap jam di ruang utama.
+          </div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">02</div>
+          <div class="guide-text">
+            <strong>Verifikasi Jawaban:</strong> Jawab setiap tahap dengan cermat. Panah navigasi kanan akan aktif setelah jawaban diverifikasi benar.
+          </div>
+        </div>
+      </div>
+      <div class="modal-petunjuk-footer">
+        <button type="button" class="btn-yellow-modal" id="btnUnderstoodPetunjukLevel">
+          Saya Mengerti →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config/env.js"></script>
+  <script src="models/SupabaseService.js"></script>
+  <script src="models/UserModel.js"></script>
+  <script src="models/MissionModel.js"></script>
+  <script src="controllers/MissionLevelController.js"></script>
+</body>
+</html>

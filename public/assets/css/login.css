@@ -1,0 +1,319 @@
+/* ==============================================================================
+   MAT SMA / EXPO CITY - LOGIN / AUTENTIKASI (login.css)
+   Tema: Kota Teknologi Futuristik Terang (Light Ice-Blue & White)
+   Tipografi: TT Octosquares Condensed (dengan webfont fallback Chakra Petch & Rajdhani)
+   Efek: Background Fixed Parallax murni gambar asli tanpa lapisan gelap
+   Aksen: Tombol Kuning Bercahaya (Radiant Glow)
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --color-primary: #0284C7;
+  --color-primary-light: #38BDF8;
+  --color-primary-dark: #0369A1;
+
+  /* Warna Kuning Emas Expo City */
+  --color-yellow: #F59E0B;
+  --color-yellow-light: #FBBF24;
+  --color-yellow-glow: rgba(245, 158, 11, 0.75);
+
+  /* Kotak / Card: Tema Terang (Biru Muda Condong ke Putih Bersih) */
+  --color-surface: rgba(240, 248, 255, 0.92);
+  --color-surface-border: rgba(186, 230, 253, 0.85);
+
+  /* Teks Kontras Tinggi */
+  --color-text-title: #0A2540;
+  --color-text-body: #1E293B;
+  --color-text-muted: #475569;
+
+  /* Font TT Octosquares Condensed */
+  --font-main: 'TT Octosquares Condensed', 'TT Octosquares', 'Chakra Petch', 'Rajdhani', sans-serif;
+  --font-display: 'TT Octosquares Condensed', 'TT Octosquares', 'Orbitron', 'Chakra Petch', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--font-main);
+  background-color: #E0F2FE;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Background Fixed Parallax */
+.login-background {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../images/login.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Minimal */
+.login-header {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(240, 248, 255, 0.88);
+  border-bottom: 1.5px solid rgba(186, 230, 253, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 14px rgba(14, 116, 144, 0.08);
+}
+
+.brand-link {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.brand-mat {
+  color: #0284C7;
+  font-weight: 800;
+}
+
+.brand-sma {
+  color: #F59E0B;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+/* Kontainer Form Login */
+.login-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(186, 230, 253, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2.75rem 2.25rem;
+  box-shadow: 0 20px 50px rgba(14, 116, 144, 0.15), 0 0 35px rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #F59E0B, #38BDF8, transparent);
+}
+
+.login-header-group {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-title {
+  font-family: var(--font-display);
+  font-size: 2.35rem;
+  font-weight: 900;
+  color: #FBBF24;
+  -webkit-text-stroke: 1.5px #FFFFFF;
+  text-shadow: 
+    0 0 16px rgba(245, 158, 11, 0.5),
+    0 0 35px rgba(251, 191, 36, 0.35),
+    0 4px 12px rgba(15, 23, 42, 0.18);
+  letter-spacing: 0.05em;
+}
+
+/* Tab Mode Switcher: Login vs Buat Akun */
+.auth-mode-toggle {
+  display: flex;
+  background: rgba(224, 242, 254, 0.7);
+  border: 1.5px solid rgba(186, 230, 253, 0.95);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 1.65rem;
+}
+
+.auth-toggle-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  background: transparent;
+  color: #0369A1;
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  font-weight: 800;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.auth-toggle-btn.active {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.35);
+}
+
+.auth-toggle-btn:not(.active):hover {
+  background: rgba(255, 255, 255, 0.85);
+  color: #0284C7;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.35rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.form-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 1.15rem;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(186, 230, 253, 0.95);
+  border-radius: 10px;
+  color: #0F172A;
+  outline: none;
+  transition: all 0.18s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.form-input:focus {
+  border-color: #F59E0B;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.form-input::placeholder {
+  color: #94A3B8;
+}
+
+/* Password Input dengan Tombol Toggle Mata di Sisi Kanan */
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-wrapper .form-input {
+  padding-right: 3rem; /* Ruang untuk tombol mata */
+}
+
+.btn-toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.18s ease;
+}
+
+.btn-toggle-password:hover {
+  color: #D97706;
+  background: rgba(245, 158, 11, 0.15);
+}
+
+/* Tombol Submit Login Kuning Bercahaya */
+.btn-submit {
+  width: 100%;
+  height: 52px;
+  margin-top: 0.85rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  font-family: var(--font-main);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  border: 1.5px solid #FEF08A;
+  color: #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-submit:hover,
+.btn-submit:focus,
+.btn-submit:active {
+  background: linear-gradient(135deg, #FBBF24, #F59E0B);
+  color: #0F172A;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(245, 158, 11, 0.95), 0 0 45px rgba(251, 191, 36, 0.6);
+}
+
+.link-back-underline {
+  display: inline-block;
+  color: #D97706;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-family: var(--font-main);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.18s ease;
+  cursor: pointer;
+}
+
+.link-back-underline:hover {
+  color: #B45309;
+}
+
+@media (max-width: 640px) {
+  .login-card {
+    padding: 2.25rem 1.5rem;
+  }
+}

@@ -1,0 +1,945 @@
+/* ==============================================================================
+   MAT SMA / EXPO CITY - HALAMAN BERANDA / MENU (menu.css)
+   Tema: Kota Teknologi Futuristik Terang (Light Ice-Blue & White)
+   Tipografi: TT Octosquares Condensed (dengan webfont fallback Chakra Petch & Rajdhani)
+   Efek: Background Fixed Parallax murni gambar asli tanpa lapisan gelap
+   Aksen: Judul Kuning Bergaris Putih & Tombol Kuning Bercahaya (Radiant Glow)
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --color-primary: #0284C7;
+  --color-primary-light: #38BDF8;
+  --color-primary-dark: #0369A1;
+
+  /* Warna Kuning Emas Expo City */
+  --color-yellow: #F59E0B;
+  --color-yellow-light: #FBBF24;
+  --color-yellow-bright: #FDE047;
+  --color-yellow-glow: rgba(245, 158, 11, 0.75);
+
+  /* Tema Terang: Putih Bersih & Biru Es Transparan */
+  --color-surface-light: rgba(240, 248, 255, 0.92);
+  --color-surface-card: rgba(255, 255, 255, 0.95);
+  --color-surface-border: rgba(186, 230, 253, 0.88);
+
+  /* Teks Kontras Tinggi (Dark Navy/Slate agar terbaca tajam) */
+  --color-text-title: #0A2540;
+  --color-text-body: #1E293B;
+  --color-text-muted: #475569;
+
+  /* Font TT Octosquares Condensed */
+  --font-main: 'TT Octosquares Condensed', 'TT Octosquares', 'Chakra Petch', 'Rajdhani', sans-serif;
+  --font-display: 'TT Octosquares Condensed', 'TT Octosquares', 'Orbitron', 'Chakra Petch', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--font-main);
+  background-color: #E0F2FE;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Background Murni Gambar Asli Tanpa Lapisan Gelap */
+.menu-background,
+.beranda-background {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../images/beranda.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==============================================================================
+   HEADER NAVIGASI (Dikecilkan Sedikit & Huruf SMA Warna Putih Tanpa Kotak)
+   ============================================================================== */
+.menu-header {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(240, 248, 255, 0.9);
+  border-bottom: 1.5px solid rgba(186, 230, 253, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 14px rgba(14, 116, 144, 0.08);
+}
+
+.brand-badge {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.brand-mat {
+  color: #0284C7;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.brand-sma {
+  color: #F59E0B;
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.user-profile-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #FFFFFF;
+  padding: 0.35rem 0.95rem;
+  border-radius: 8px;
+  border: 1.5px solid rgba(186, 230, 253, 0.85);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.06);
+}
+
+.profile-meta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1E293B;
+  letter-spacing: 0.02em;
+}
+
+.profile-meta span {
+  color: #0284C7;
+  font-weight: 800;
+}
+
+.btn-logout {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-family: var(--font-main);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #78350F;
+  background: linear-gradient(135deg, #FDE68A, #F59E0B);
+  border: 1.5px solid #FCD34D;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+}
+
+.btn-logout:hover {
+  background: linear-gradient(135deg, #FBBF24, #D97706);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.6);
+}
+
+/* ==============================================================================
+   KONTAINER BERANDA
+   ============================================================================== */
+.beranda-container {
+  flex: 1;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 3.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==============================================================================
+   TOP ACTION BAR (Judul BERANDA + 1 Tombol Bulat Kuning Kurikulum di Kanan Atas)
+   ============================================================================== */
+.beranda-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+}
+
+.beranda-title-wrap {
+  flex: 1;
+}
+
+/* Judul BERANDA Kuning Bergaris Putih & Berpijar */
+.beranda-hero-title {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #FBBF24;
+  -webkit-text-stroke: 1.5px #FFFFFF;
+  text-shadow: 
+    0 0 16px rgba(245, 158, 11, 0.5),
+    0 0 35px rgba(251, 191, 36, 0.35),
+    0 4px 12px rgba(15, 23, 42, 0.18);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+/* Kotak Transparan Khusus Kicker agar Sangat Terbaca Jelas */
+.beranda-hero-sub-box {
+  display: inline-block;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(254, 240, 138, 0.55);
+  padding: 0.35rem 0.95rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.beranda-hero-sub {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #FEF08A;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Tombol Bulat Kuning di Pojok Kanan Atas Tepat Bawah Header */
+.page-top-actions {
+  position: absolute;
+  top: 72px;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  z-index: 45;
+}
+
+.btn-yellow-round-action {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  border: 2px solid #FEF08A;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-yellow-round-action:hover {
+  background: linear-gradient(135deg, #FBBF24, #F59E0B);
+  color: #0F172A;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.95), 0 0 35px rgba(251, 191, 36, 0.6);
+  transform: translateY(-2px) scale(1.06);
+}
+
+.btn-round-yellow:hover .round-icon {
+  color: #78350F;
+  text-shadow: none;
+}
+
+.round-tooltip {
+  position: absolute;
+  right: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15, 23, 42, 0.9);
+  color: #FEF08A;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: var(--font-main);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-round-yellow:hover .round-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-4px);
+}
+
+/* ==============================================================================
+   ALERT KUNCI MISI UTAMA (Light Theme)
+   ============================================================================== */
+.lock-alert-box {
+  margin-bottom: 2rem;
+  background: rgba(254, 242, 242, 0.96);
+  border: 2px solid #EF4444;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.15);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lock-alert-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.lock-alert-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.lock-alert-body {
+  flex: 1;
+}
+
+.lock-alert-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #DC2626;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.lock-alert-heading {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #991B1B;
+  margin-top: 0.25rem;
+}
+
+.lock-alert-text {
+  color: #7F1D1D;
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+  line-height: 1.6;
+}
+
+.lock-alert-close {
+  background: transparent;
+  border: none;
+  color: #DC2626;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  line-height: 1;
+}
+
+/* ==============================================================================
+   STAGE BERANDA (Robot Duduk Bergerak di Kiri + 3 Tombol Utama di Kanan)
+   ============================================================================== */
+.beranda-stage {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.82);
+  border: 2px solid rgba(186, 230, 253, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2.75rem;
+  box-shadow: 
+    0 20px 50px rgba(14, 116, 144, 0.12),
+    0 0 35px rgba(255, 255, 255, 0.9);
+}
+
+/* Kolom Kiri: Maskot Robot Duduk dengan Animasi Bergerak Mengambang */
+.mascot-sitting-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mascot-img-wrap {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.robot-sitting-image {
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(2, 132, 199, 0.25));
+  transition: transform 0.3s ease;
+}
+
+.mascot-speech-card {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(186, 230, 253, 0.9);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+  position: relative;
+}
+
+.mascot-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #0284C7;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.mascot-dialog {
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* Kolom Kanan: 3 Cyber Button Stacked (Materi, Persiapan Misi, Misi Utama) */
+.cyber-buttons-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Base Cyber Plate Button: Tombol Kotak / Plakat Elegan */
+.cyber-plate-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.45rem 1.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(186, 230, 253, 0.95);
+  border-radius: 18px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 20px rgba(14, 116, 144, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Penomoran Cyber Plate */
+.plate-number {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0284C7;
+  background: #E0F2FE;
+  border: 1.5px solid #BAE6FD;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.22s ease;
+}
+
+.plate-body {
+  flex: 1;
+}
+
+.plate-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #0284C7;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plate-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0A2540;
+  margin-top: 0.15rem;
+  letter-spacing: 0.02em;
+}
+
+.plate-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  margin-top: 0.25rem;
+  line-height: 1.45;
+}
+
+/* Tombol Aksi Kuning di Sisi Kanan Plakat */
+.plate-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.25rem;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  border: 1.5px solid #FEF08A;
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  transition: all 0.22s ease;
+}
+
+.arrow-sym {
+  font-size: 1.15rem;
+  transition: transform 0.2s ease;
+}
+
+/* Efek Hover / Active: Plakat & Tombol Kuning Bercahaya Radiasi */
+.cyber-plate-btn:hover {
+  transform: translateY(-3px);
+  border-color: #F59E0B;
+  background: #FFFFFF;
+  box-shadow: 
+    0 12px 30px rgba(2, 132, 199, 0.14),
+    0 0 25px rgba(245, 158, 11, 0.35);
+}
+
+.cyber-plate-btn:hover .plate-number {
+  background: linear-gradient(135deg, #FDE68A, #F59E0B);
+  color: #78350F;
+  border-color: #FCD34D;
+  transform: scale(1.05);
+}
+
+.cyber-plate-btn:hover .plate-arrow {
+  background: linear-gradient(135deg, #FBBF24, #F59E0B);
+  border-color: #FFFFFF;
+  color: #0F172A;
+  box-shadow: 
+    0 0 24px rgba(245, 158, 11, 0.9),
+    0 0 40px rgba(251, 191, 36, 0.55);
+}
+
+.cyber-plate-btn:hover .arrow-sym {
+  transform: translateX(4px);
+}
+
+/* State Kartu Terkunci */
+.cyber-plate-btn.locked-card {
+  opacity: 0.72;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.cyber-plate-btn.locked-card:hover {
+  border-color: #EF4444;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.25);
+}
+
+.cyber-plate-btn.locked-card .plate-arrow {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  border-color: #FCA5A5;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+}
+
+/* ==============================================================================
+   MODAL DIALOG (Kurikulum & Tim Pengembang)
+   ============================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 37, 64, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-dialog {
+  background: rgba(255, 255, 255, 0.98);
+  border: 2px solid rgba(186, 230, 253, 0.95);
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: 
+    0 25px 60px rgba(10, 37, 64, 0.25),
+    0 0 30px rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-medium {
+  max-width: 680px;
+  max-height: 84vh;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1.5px solid rgba(186, 230, 253, 0.85);
+  background: rgba(240, 248, 255, 0.85);
+}
+
+.modal-header-info {
+  flex: 1;
+}
+
+.modal-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #0284C7;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0A2540;
+  margin-top: 0.2rem;
+}
+
+.modal-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.modal-close-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(186, 230, 253, 0.9);
+  color: #0369A1;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+}
+
+.modal-close-btn:hover {
+  background: #EF4444;
+  color: #FFFFFF;
+  border-color: #EF4444;
+}
+
+.modal-body {
+  padding: 2rem;
+  overflow-y: auto;
+  color: #1E293B;
+}
+
+.modal-footer {
+  padding: 1.25rem 2rem;
+  border-top: 1.5px solid rgba(186, 230, 253, 0.85);
+  background: rgba(240, 248, 255, 0.85);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-modal-action {
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  border: 1.5px solid #FEF08A;
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-modal-action:hover {
+  background: linear-gradient(135deg, #FBBF24, #F59E0B);
+  color: #0F172A;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.9), 0 0 40px rgba(251, 191, 36, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Navigasi Geser Kiri-Kanan */
+.slide-nav-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1.5px solid #BAE6FD;
+  color: #0284C7;
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+}
+
+.slide-nav-arrow:hover {
+  background: #0284C7;
+  color: #FFFFFF;
+}
+
+.slide-counter-badge {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #0284C7;
+  min-width: 65px;
+  text-align: center;
+}
+
+.curriculum-slide-panel {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(186, 230, 253, 0.85);
+  border-radius: 14px;
+  padding: 1.75rem;
+  min-height: 190px;
+}
+
+.curriculum-badge-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #0284C7;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.curriculum-panel-heading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0369A1;
+  margin-bottom: 0.75rem;
+}
+
+.curriculum-panel-text {
+  color: #334155;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.curriculum-bullets {
+  padding-left: 1.25rem;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.team-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.team-member-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #F8FAFC;
+  border: 1.5px solid rgba(186, 230, 253, 0.85);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.team-avatar-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.team-avatar-box.blue {
+  border: 1.5px solid #0284C7;
+  background: #E0F2FE;
+}
+
+.team-avatar-box.yellow {
+  border: 1.5px solid #D97706;
+  background: #FEF3C7;
+}
+
+.team-role-tag {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: #0284C7;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.team-role-tag.yellow {
+  color: #D97706;
+}
+
+.team-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-top: 0.15rem;
+}
+
+.team-inst {
+  font-size: 0.82rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+/* ==============================================================================
+   RESPONSIVE DESIGN (Tampilan Handphone Rapi & Estetik)
+   ============================================================================== */
+@media (max-width: 960px) {
+  .beranda-stage {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .mascot-sitting-card {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .menu-header {
+    padding: 0 1.25rem;
+  }
+
+  .profile-meta {
+    font-size: 0.75rem;
+  }
+
+  .beranda-container {
+    padding: 1.5rem 1rem 2.5rem 1rem;
+  }
+
+  .beranda-top-bar {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .beranda-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .beranda-hero-sub {
+    font-size: 0.75rem;
+  }
+
+  .btn-round-yellow {
+    width: 46px;
+    height: 46px;
+  }
+
+  .round-icon {
+    font-size: 1.25rem;
+  }
+
+  .round-tooltip {
+    display: none;
+  }
+
+  .cyber-plate-btn {
+    padding: 1.25rem 1.2rem;
+    gap: 1rem;
+  }
+
+  .plate-number {
+    width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
+  }
+
+  .plate-title {
+    font-size: 1.25rem;
+  }
+
+  .plate-desc {
+    font-size: 0.85rem;
+  }
+
+  .plate-arrow {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .modal-dialog {
+    max-height: 92vh;
+  }
+
+  .modal-header {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .modal-body {
+    padding: 1.25rem;
+  }
+
+  .modal-footer {
+    padding: 1rem 1.25rem;
+  }
+}

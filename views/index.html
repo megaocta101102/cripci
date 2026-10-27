@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat SMA - Expo City</title>
+  <meta name="description" content="Expo City - Media Pembelajaran Matematika SMA Interaktif Bertema Kota Teknologi dengan Tantangan Escape Room.">
+  <link rel="stylesheet" href="assets/css/cover.css">
+</head>
+<body class="cover-background">
+
+  <!-- Navigasi Header Top Bar -->
+  <header class="top-header">
+    <a href="index.html" class="brand-title">
+      <span class="brand-mat">Mat</span><span class="brand-sma">SMA</span>
+    </a>
+  </header>
+
+  <!-- Konten Utama Halaman Cover -->
+  <main class="main-container">
+    <div class="hero-section">
+      <!-- Kolom Kiri: Headline & CTA -->
+      <div class="hero-content">
+        <!-- Judul Expo City Kuning Bergaris Putih -->
+        <h1 class="hero-title-expo">
+          Expo City
+        </h1>
+        <div class="hero-subtitle-city">
+          KOTA PEMBELAJARAN MATEMATIKA INTERAKTIF
+        </div>
+
+        <!-- Kotak Transparan Hanya di Tulisan Selamat Datang -->
+        <div class="hero-desc-box">
+          <p class="hero-description">
+            Selamat datang di media pembelajaran interaktif berbasis Kota Teknologi. Asah kemampuan bernalar, selesaikan tantangan digital, dan taklukkan setiap misi masa depan secara terstruktur.
+          </p>
+        </div>
+
+        <!-- Tombol Aksi Utama: Masuk Kota mengarah ke Login -->
+        <div class="hero-cta-group">
+          <a href="login.html" class="btn-large primary" id="heroPrimaryCta">
+            <span>Masuk Kota</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Maskot Robot Expo City yang Estetik & Rapi -->
+      <div class="hero-visual">
+        <div class="robot-mascot-card">
+          <div class="mascot-image-wrapper">
+            <img src="assets/images/robot_mascot.png" alt="Maskot Robot Expo City" loading="eager">
+          </div>
+
+          <div class="mascot-speech-bubble">
+            <strong>Halo Penjelajah!</strong> Aku Robo-Guide Expo City 👋 Siap menemanimu menjelajahi kota teknologi dan memecahkan tantangan <em>Escape Room Eksponensial</em>!
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts: MVC Architecture -->
+  <script src="config/env.js"></script>
+  <script src="models/SupabaseService.js"></script>
+  <script src="models/UserModel.js"></script>
+  <script src="controllers/CoverController.js"></script>
+</body>
+</html>

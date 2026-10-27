@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat SMA - Materi Pembelajaran</title>
+  <meta name="description" content="Modul Materi Pembelajaran Matematika SMA Expo City.">
+  <link rel="stylesheet" href="assets/css/menu.css">
+  <style>
+    .materi-page-container {
+      flex: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem 2rem;
+      position: relative;
+    }
+
+    .materi-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .materi-title-wrap {
+      flex: 1;
+    }
+
+    .materi-hero-title {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      color: #FBBF24;
+      -webkit-text-stroke: 1.5px #FFFFFF;
+      text-shadow: 
+        0 0 16px rgba(245, 158, 11, 0.5),
+        0 0 35px rgba(251, 191, 36, 0.35),
+        0 4px 12px rgba(15, 23, 42, 0.18);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .materi-hero-sub-box {
+      display: inline-block;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(254, 240, 138, 0.55);
+      padding: 0.35rem 0.95rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .materi-hero-sub {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #FEF08A;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Tombol Kuning Bulat Pojok Kanan Atas Tepat Bawah Header */
+    .page-top-actions {
+      position: absolute;
+      top: 72px;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      z-index: 45;
+    }
+
+    .btn-yellow-round-action {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      border: 2px solid #FEF08A;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+      transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .btn-yellow-round-action:hover {
+      background: linear-gradient(135deg, #FBBF24, #F59E0B);
+      color: #0F172A;
+      border-color: #FFFFFF;
+      box-shadow: 0 0 22px rgba(245, 158, 11, 0.95), 0 0 35px rgba(251, 191, 36, 0.6);
+      transform: translateY(-2px) scale(1.06);
+    }
+
+    .materi-blank-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid rgba(186, 230, 253, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 3rem 2.25rem;
+      box-shadow: 
+        0 20px 50px rgba(14, 116, 144, 0.12),
+        0 0 35px rgba(255, 255, 255, 0.9);
+      text-align: center;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .materi-icon-wrap {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+      border: 2px solid #FCD34D;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 18px rgba(245, 158, 11, 0.25);
+    }
+
+    .materi-card-heading {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0A2540;
+      margin-bottom: 0.65rem;
+    }
+
+    .materi-card-desc {
+      font-size: 0.92rem;
+      color: #475569;
+      max-width: 580px;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-materi-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.85rem;
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      border: 1.5px solid #FEF08A;
+      color: #FFFFFF;
+      border-radius: 8px;
+      font-family: var(--font-main);
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+      transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .btn-materi-back:hover {
+      background: linear-gradient(135deg, #FBBF24, #F59E0B);
+      color: #0F172A;
+      border-color: #FFFFFF;
+      box-shadow: 0 0 24px rgba(245, 158, 11, 0.95), 0 0 40px rgba(251, 191, 36, 0.6);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 640px) {
+      .page-top-actions {
+        top: 68px;
+        right: 1rem;
+      }
+      .btn-yellow-round-action {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body class="menu-background">
+
+  <!-- Header Materi -->
+  <header class="menu-header">
+    <a href="menu.html" class="brand-badge">
+      <span class="brand-mat">Mat</span><span class="brand-sma">SMA</span>
+    </a>
+  </header>
+
+  <!-- Tombol Kuning Bulat Pojok Kanan Atas Tepat Bawah Header -->
+  <div class="page-top-actions">
+    <a href="menu.html" class="btn-yellow-round-action" title="Kembali ke Beranda" aria-label="Kembali ke Beranda">
+      🏠
+    </a>
+  </div>
+
+  <!-- Konten Materi -->
+  <main class="materi-page-container">
+    <div class="materi-header-bar">
+      <div class="materi-title-wrap">
+        <h1 class="materi-hero-title">MATERI</h1>
+        <div class="materi-hero-sub-box">
+          <span class="materi-hero-sub">MODUL PEMBELAJARAN</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kotak Kosongan Siap Diisi Konten Pembelajaran Sesuai Permintaan User -->
+    <div class="materi-blank-card">
+      <div class="materi-icon-wrap">
+        📚
+      </div>
+      <h2 class="materi-card-heading">Modul Materi Pembelajaran</h2>
+      <p class="materi-card-desc">
+        Area materi pembelajaran matematika interaktif. Konten materi siap diintegrasikan sesuai dengan modul, silabus, dan panduan kurikulum pembelajaran.
+      </p>
+      <a href="menu.html" class="btn-materi-back">
+        <span>← Kembali ke Beranda</span>
+      </a>
+    </div>
+  </main>
+
+  <script src="config/env.js"></script>
+  <script src="models/SupabaseService.js"></script>
+  <script src="models/UserModel.js"></script>
+</body>
+</html>

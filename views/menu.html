@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat SMA - Beranda</title>
+  <meta name="description" content="Pusat kendali dan navigasi materi pembelajaran Mat SMA Expo City.">
+  <link rel="stylesheet" href="assets/css/menu.css">
+</head>
+<body class="menu-background">
+
+  <!-- Header Navigasi (Lebih Ringkas & Ramping) -->
+  <header class="menu-header">
+    <a href="index.html" class="brand-badge">
+      <span class="brand-mat">Mat</span><span class="brand-sma">SMA</span>
+    </a>
+
+    <!-- Strip Profil Pengguna Aktif & Tombol Logout -->
+    <div class="user-profile-strip">
+      <div class="profile-meta" id="userProfileBadge">
+        Penjelajah: Admin Cripci
+      </div>
+      <a href="index.html" class="btn-logout" id="logoutBtn">Logout</a>
+    </div>
+  </header>
+
+  <!-- Tombol Kuning Bulat Pojok Kanan Atas Tepat Bawah Header -->
+  <div class="page-top-actions">
+    <button type="button" class="btn-yellow-round-action" id="btnOpenKurikulum" title="Informasi CP, TP & Tim Pengembang" aria-label="Informasi Kurikulum & Pengembang">
+      ℹ
+    </button>
+  </div>
+
+  <!-- Konten Utama Beranda -->
+  <main class="beranda-container">
+
+    <!-- Top Action Bar: Judul BERANDA & Kicker -->
+    <div class="beranda-top-bar">
+      <div class="beranda-title-wrap">
+        <h1 class="beranda-hero-title">BERANDA</h1>
+        <!-- Kicker dengan Box Transparan Berkontras Tinggi agar Terbaca Jelas -->
+        <div class="beranda-hero-sub-box">
+          <span class="beranda-hero-sub">PUSAT KOMANDO // MEDIA PEMBELAJARAN MATEMATIKA INTERAKTIF</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Peringatan Akses Misi Utama Terkunci (Thematic Alert) -->
+    <div id="missionLockAlert" class="lock-alert-box" style="display: none;">
+      <div class="lock-alert-content">
+        <div class="lock-alert-icon">⚠️</div>
+        <div class="lock-alert-body">
+          <div class="lock-alert-kicker">PROTOKOL KEAMANAN // OTORISASI BELUM DITERBITKAN</div>
+          <div class="lock-alert-heading">Akses Sektor Misi Utama Terkunci!</div>
+          <p class="lock-alert-text">
+            Otorisasi gerbang belum valid. Anda wajib <strong>menuntaskan evaluasi pada tahap Persiapan Misi</strong> terlebih dahulu untuk mengaktifkan izin masuk Misi Utama.
+          </p>
+        </div>
+        <button type="button" id="closeLockAlertBtn" class="lock-alert-close">✕</button>
+      </div>
+    </div>
+
+    <!-- Interactive Stage: Robot Duduk di Kiri + 3 Tombol Utama di Tengah -->
+    <section class="beranda-stage">
+      <!-- Kolom Kiri: Maskot Robot Duduk dengan Laptop (Animasi Mengambang Mulus) -->
+      <div class="mascot-sitting-card">
+        <div class="mascot-img-wrap" id="mascotWrapper">
+          <img src="assets/images/r7.png" alt="Maskot Robot Duduk dengan Laptop" class="robot-sitting-image" id="mascotSittingImg">
+        </div>
+        <div class="mascot-speech-card">
+          <div class="mascot-badge">🤖 Robo-Assistant</div>
+          <p class="mascot-dialog">
+            "Hai Penjelajah! Pelajari <strong>Materi</strong> terlebih dahulu, tuntaskan <strong>Persiapan Misi</strong>, lalu pecahkan tantangan 3 Level <strong>Escape Room</strong> di Misi Utama!"
+          </p>
+        </div>
+      </div>
+
+      <!-- Kolom Tengah/Kanan: 3 Cyber Button (Materi, Persiapan Misi, Misi Utama) -->
+      <div class="cyber-buttons-stack">
+
+        <!-- 1. Tombol MATERI -->
+        <a href="materi.html" class="cyber-plate-btn btn-materi-plate" id="btnMateriPlate">
+          <div class="plate-number">01</div>
+          <div class="plate-body">
+            <span class="plate-kicker">MODUL PEMBELAJARAN</span>
+            <h2 class="plate-title">Sifat-sifat eksponen</h2>
+            <p class="plate-desc">Eksplorasi konsep matematika interaktif sebelum memulai pengujian sektor misi.</p>
+          </div>
+          <div class="plate-arrow">
+            <span>Pelajari</span>
+            <span class="arrow-sym">→</span>
+          </div>
+        </a>
+
+        <!-- 2. Tombol PERSIAPAN MISI -->
+        <a href="kuis.html" class="cyber-plate-btn btn-kuis-plate" id="quizMenuCard">
+          <div class="plate-number">02</div>
+          <div class="plate-body">
+            <span class="plate-kicker">EVALUASI PRASYARAT</span>
+            <h2 class="plate-title">Persiapan Misi</h2>
+            <p class="plate-desc">Uji kesiapan pemahaman konsep awal untuk membuka izin gerbang Misi Utama.</p>
+          </div>
+          <div class="plate-arrow">
+            <span>Mulai</span>
+            <span class="arrow-sym">→</span>
+          </div>
+        </a>
+
+        <!-- 3. Tombol MISI UTAMA (3 Level Escape Room) -->
+        <a href="misi.html" class="cyber-plate-btn btn-misi-plate" id="missionMenuCard">
+          <div class="plate-number">03</div>
+          <div class="plate-body">
+            <span class="plate-kicker">TANTANGAN ESCAPE ROOM</span>
+            <h2 class="plate-title">Misi Utama</h2>
+            <p class="plate-desc">Pecahkan teka-teki sandi 3 level kota teknologi dan raih lencana kehormatan.</p>
+          </div>
+          <div class="plate-arrow" id="missionCardArrow">
+            <span>Mulai</span>
+            <span class="arrow-sym">→</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       MODAL: INFORMASI CP, TP & TIM PENGEMBANG (Geser Kanan-Kiri Melalui Panah)
+       ========================================================================= -->
+  <div id="modalKurikulum" class="modal-backdrop" style="display: none;">
+    <div class="modal-dialog modal-medium">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-kicker">INFORMASI KURIKULUM &amp; PENGEMBANG</span>
+          <h2 class="modal-title" id="menuSlideTitle">Capaian Pembelajaran (CP)</h2>
+        </div>
+        <div class="modal-header-nav">
+          <button type="button" class="slide-nav-arrow" id="menuSlidePrevBtn" aria-label="Slide Sebelumnya" style="visibility: hidden;">←</button>
+          <span id="menuSlideCounter" class="slide-counter-badge">01 / 03</span>
+          <button type="button" class="slide-nav-arrow" id="menuSlideNextBtn" aria-label="Slide Berikutnya">→</button>
+          <button type="button" class="modal-close-btn" id="btnCloseKurikulum" style="margin-left: 0.5rem;">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Panel 1: Capaian Pembelajaran -->
+        <div id="menuTabCP" class="curriculum-slide-panel" style="display: block;">
+          <div class="curriculum-badge-tag">FASE F // KELAS XI - XII SMA</div>
+          <h3 class="curriculum-panel-heading">Capaian Pembelajaran (CP)</h3>
+          <p class="curriculum-panel-text">
+            Peserta didik mampu menerapkan konsep dan pemecahan masalah matematika secara kreatif dan bernalar kritis, memodelkan fenomena kontekstual ke dalam formula matematis, serta menginterpretasi solusi secara terstruktur dalam ekosistem digital kota teknologi.
+          </p>
+        </div>
+
+        <!-- Panel 2: Tujuan Pembelajaran -->
+        <div id="menuTabTP" class="curriculum-slide-panel" style="display: none;">
+          <div class="curriculum-badge-tag">INDIKATOR PENCAPAIAN KOMPETENSI</div>
+          <h3 class="curriculum-panel-heading">Tujuan Pembelajaran (TP)</h3>
+          <ul class="curriculum-bullets">
+            <li>Memahami dan mengidentifikasi karakteristik konsep matematika eksponensial dan logika dalam skenario digital.</li>
+            <li>Menganalisis dan mendekripsi kunci pemecahan masalah melalui penalaran matematis terstruktur.</li>
+            <li>Menuntaskan tantangan Escape Room 3 Level dengan menerapkan strategi berpikir komputasional dan matematis.</li>
+          </ul>
+        </div>
+
+        <!-- Panel 3: Tim Pengembang Media -->
+        <div id="menuTabTeam" class="curriculum-slide-panel" style="display: none;">
+          <div class="curriculum-badge-tag">PROFIL TIM PENGEMBANG</div>
+          <h3 class="curriculum-panel-heading">Tim Pengembang Media</h3>
+          <div class="team-cards-grid">
+            <!-- Tim 1: Dosen Pembimbing -->
+            <div class="team-member-item">
+              <div class="team-avatar-box blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="team-meta">
+                <div class="team-role-tag">01 // DOSEN PEMBIMBING</div>
+                <div class="team-name">[Nama &amp; Gelar Dosen Pembimbing]</div>
+                <div class="team-inst">Departemen Pendidikan Matematika</div>
+              </div>
+            </div>
+
+            <!-- Tim 2: Pengembang Media -->
+            <div class="team-member-item">
+              <div class="team-avatar-box yellow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="team-meta">
+                <div class="team-role-tag yellow">02 // PENGEMBANG MEDIA</div>
+                <div class="team-name">[Nama Pengembang Media]</div>
+                <div class="team-inst">S1 Pendidikan Matematika</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-action" id="btnDismissKurikulum">
+          Tutup Informasi
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: MVC Architecture -->
+  <script src="config/env.js"></script>
+  <script src="models/SupabaseService.js"></script>
+  <script src="models/UserModel.js"></script>
+  <script src="controllers/MenuController.js"></script>
+</body>
+</html>

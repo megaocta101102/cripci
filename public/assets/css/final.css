@@ -1,0 +1,450 @@
+/* ==============================================================================
+   MAT SMA / EXPO CITY - HALAMAN FINAL / REWARD SISWA (final.css)
+   File CSS untuk Halaman Reward
+   Tema: Kota Teknologi Futuristik Terang (Light Ice-Blue & White)
+   Background: Fixed Parallax murni gambar asli tanpa lapisan gelap
+   Aksen: Tombol Kuning Bercahaya (Radiant Glow)
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --color-primary: #0284C7;
+  --color-primary-light: #38BDF8;
+  --color-primary-dark: #0369A1;
+
+  /* Warna Kuning Emas Expo City */
+  --color-yellow: #F59E0B;
+  --color-yellow-light: #FBBF24;
+  --color-yellow-glow: rgba(245, 158, 11, 0.75);
+
+  /* Kotak / Card: Tema Terang (Biru Muda Condong ke Putih Bersih) */
+  --color-surface: rgba(240, 248, 255, 0.94);
+  --color-surface-card: rgba(255, 255, 255, 0.95);
+  --color-surface-border: rgba(186, 230, 253, 0.9);
+
+  /* Teks Kontras Tinggi (Dark Navy/Slate agar terbaca tajam) */
+  --color-text-title: #0A2540;
+  --color-text-body: #1E293B;
+  --color-text-muted: #475569;
+
+  /* Font TT Octosquares Condensed */
+  --font-main: 'TT Octosquares Condensed', 'TT Octosquares', 'Chakra Petch', 'Rajdhani', sans-serif;
+  --font-display: 'TT Octosquares Condensed', 'TT Octosquares', 'Orbitron', 'Chakra Petch', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--font-main);
+  background-color: #E0F2FE;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Background Murni Gambar Asli Tanpa Lapisan Gelap */
+.final-background {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../images/beranda.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Final */
+.final-header {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(240, 248, 255, 0.88);
+  border-bottom: 1.5px solid rgba(186, 230, 253, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 14px rgba(14, 116, 144, 0.08);
+}
+
+.brand-link {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.brand-mat {
+  color: #0284C7;
+  font-weight: 800;
+}
+
+.brand-sma {
+  color: #F59E0B;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.final-status-pill {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0369A1;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(186, 230, 253, 0.9);
+  padding: 0.35rem 1.15rem;
+  border-radius: 8px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Tombol Bulat Kuning di Pojok Kanan Atas Tepat Bawah Header */
+.page-top-actions {
+  position: absolute;
+  top: 72px;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  z-index: 45;
+}
+
+.btn-yellow-round-action {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  border: 2px solid #FEF08A;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-yellow-round-action:hover {
+  background: linear-gradient(135deg, #FBBF24, #F59E0B);
+  color: #0F172A;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.95), 0 0 35px rgba(251, 191, 36, 0.6);
+  transform: translateY(-2px) scale(1.06);
+}
+
+.btn-ghost {
+  display: none;
+}
+
+/* Kontainer Final */
+.final-container {
+  flex: 1;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.final-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.final-title {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #FBBF24;
+  -webkit-text-stroke: 1.5px #FFFFFF;
+  text-shadow: 
+    0 0 16px rgba(245, 158, 11, 0.5),
+    0 0 35px rgba(251, 191, 36, 0.35),
+    0 4px 12px rgba(15, 23, 42, 0.18);
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+}
+
+.final-desc-box {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1.5px solid rgba(254, 240, 138, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 14px;
+  padding: 0.85rem 1.75rem;
+  box-shadow: 0 4px 20px rgba(14, 116, 144, 0.08);
+}
+
+.final-desc {
+  font-size: 1.05rem;
+  color: #1E293B;
+  font-weight: 600;
+}
+
+/* Card Reward Tema Terang */
+.reward-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid rgba(186, 230, 253, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 3rem 2.25rem;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(14, 116, 144, 0.12), 0 0 35px rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.student-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.25rem;
+  background: #E0F2FE;
+  border: 1.5px solid #BAE6FD;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.meta-label {
+  color: #0369A1;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.meta-username {
+  color: #0A2540;
+  font-weight: 800;
+}
+
+/* Grid Skor & Lencana */
+.reward-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.reward-metric-card {
+  background: #F8FAFC;
+  border: 1.5px solid rgba(186, 230, 253, 0.9);
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(14, 116, 144, 0.05);
+}
+
+.reward-metric-card:hover {
+  border-color: #F59E0B;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.2);
+  transform: translateY(-2px);
+}
+
+.badge-metric {
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+.score-metric {
+  border-color: rgba(186, 230, 253, 0.9);
+}
+
+.metric-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #FEF3C7;
+  border: 1.5px solid #FCD34D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #D97706;
+}
+
+.metric-svg-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.metric-header {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0284C7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.metric-badge-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0A2540;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+.metric-badge-tag {
+  font-size: 0.85rem;
+  color: #D97706;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.score-display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.score-number {
+  font-family: var(--font-display);
+  font-size: 2.35rem;
+  font-weight: 900;
+  color: #0284C7;
+  line-height: 1;
+}
+
+.score-unit {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: #64748B;
+  font-weight: 700;
+}
+
+/* Area Unggah Google Drive & Barcode */
+.upload-section {
+  margin-top: 1rem;
+  padding-top: 2.25rem;
+  border-top: 1.5px solid rgba(186, 230, 253, 0.85);
+  text-align: center;
+}
+
+.upload-instruction {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1E293B;
+  max-width: 620px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.barcode-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.barcode-scan-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #D97706;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.barcode-frame {
+  padding: 1rem;
+  background: #FFFFFF;
+  border: 2.5px solid #F59E0B;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.18);
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.barcode-frame:hover {
+  border-color: #D97706;
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.35);
+}
+
+.qr-svg {
+  display: block;
+}
+
+.barcode-link-wrapper {
+  margin-top: 1.25rem;
+}
+
+.barcode-url-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  border: 1.5px solid #FEF08A;
+  padding: 0.75rem 1.85rem;
+  border-radius: 10px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+  transition: all 0.22s ease;
+}
+
+.barcode-url-link:hover {
+  background: linear-gradient(135deg, #FBBF24, #F59E0B);
+  color: #0F172A;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.9), 0 0 40px rgba(251, 191, 36, 0.5);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .final-header {
+    padding: 0 1.25rem;
+  }
+  .final-container {
+    padding: 2rem 1.25rem;
+  }
+  .reward-grid {
+    grid-template-columns: 1fr;
+  }
+  .reward-card {
+    padding: 2rem 1.25rem;
+  }
+}
